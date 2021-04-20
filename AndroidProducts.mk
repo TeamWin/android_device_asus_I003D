@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_I003D.mk
+    $(LOCAL_DIR)/twrp_I003D.mk
