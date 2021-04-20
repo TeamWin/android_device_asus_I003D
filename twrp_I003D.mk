@@ -14,8 +14,11 @@
 # limitations under the License.
 #
 
+# Custom vendor used in build tree
+CUSTOM_VENDOR := twrp
+
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/$(CUSTOM_VENDOR)/config/common.mk)
 
 # OEM Info
 BOARD_VENDOR := asus
@@ -31,7 +34,7 @@ PRODUCT_RELEASE_NAME := I003D
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
-PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
+PRODUCT_NAME := $(CUSTOM_VENDOR)_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := $(BOARD_VENDOR)
 PRODUCT_MODEL := $(shell echo $(PRODUCT_BRAND) | tr  '[:lower:]' '[:upper:]')_$(PRODUCT_DEVICE)
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
